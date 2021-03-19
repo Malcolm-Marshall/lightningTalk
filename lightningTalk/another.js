@@ -8,13 +8,14 @@ async function main() {
 
   await page.goto('https://www.zillow.com/homes/denver_rb/');
 
-  await page.waitFor(1000);
+  // await page.waitFor(1000);
 
 
   // Return an array of all the link text and assign it to sideBarLinks
   const sidebarLinks = await page.evaluate(() => {
+    console.log('asd')
     let articles = []
-    let titles = document.getElementsByClassName('list-card-price');
+    let titles = document.querySelector('div[class="list-card-price"]');
     let scores = document.getElementsByClassName('list-card-details');
     console.log(titles)
 
